@@ -42,10 +42,6 @@ let baseline = {
       complete: false
     },
     {
-      title: "Allow the user to re-order tasks",
-      complete: false
-    },
-    {
       title: "Make this task list follow accessability best practices",
       complete: false
     }
