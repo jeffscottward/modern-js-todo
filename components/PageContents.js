@@ -2,8 +2,7 @@ import React, {useState} from 'react'
 
 import { useStateValue } from "../state/state";
 
-import CloseBtn from './CloseBtn'
-import CompleteBtn from './CompleteBtn'
+import ActionBtn from './ActionBtn'
 
 // NOTE:
 // Even simple Drag-n-Drops are rather involved
@@ -111,7 +110,7 @@ const PageContents = () => {
               className={item.complete ? "complete" : ""}
               key={item.title}
             >
-              <CompleteBtn clickAction={() => toggleCompletion(idx)} />
+              <ActionBtn clickAction={() => toggleCompletion(idx)} actionType="complete"/>
               {editingTask === idx ? (
                 <input
                   className="editing-box"
@@ -131,7 +130,7 @@ const PageContents = () => {
                   {item.title}
                 </span>
               )}
-              <CloseBtn role="button" clickAction={() => killTask(idx)} />
+              <ActionBtn role="button" clickAction={() => killTask(idx)} actionType="close" />
             </li>
           ))}
       </ul>
@@ -254,6 +253,7 @@ const PageContents = () => {
         font-size: 16px;
         transition: 0.3s;
         border-radius: 0;
+        border: 0;
       }
 
       .addBtn:hover {
